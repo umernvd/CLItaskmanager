@@ -54,6 +54,9 @@ class TaskManager {
     saveTasks() {
         try {
             fs.writeFileSync(this.filePath, JSON.stringify(this.tasks, null, 2), 'utf8');
+            console.log("stringifiedVersion", JSON.stringify(this.tasks, 2))
+            console.log("stringifiedVersion",this.tasks)
+
         } catch (error) {
             console.error(`\x1b[31m[Storage Error] Failed to write changes to disk: ${error.message}\x1b[0m`);
         }
